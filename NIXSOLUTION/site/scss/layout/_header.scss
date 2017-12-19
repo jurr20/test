@@ -1,0 +1,174 @@
+/*
+================================================================================
+|                                     HEADER                                   |
+================================================================================
+*/
+header{
+	width:100%;
+	min-width: $min-width;	
+	order: 1;	
+    -webkit-order: 1;	
+    position: fixed;
+    z-index: 9999;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+    &.active{
+        background: rgb(245, 245, 245);
+        color: #000;
+        .header-panel{
+            padding: 10px 0 10px 48px;  
+        }
+        .nav-list__link:hover {
+            text-shadow: 0px 0px 1px rgba(52, 33, 12, 0.55);
+        }
+        .menu-button span {
+            background: #000;
+            &:after, 
+            &:before {
+                background: #000;
+            }
+        }
+        .logo {
+            padding-bottom: 0;
+        }
+    }
+}
+.header{
+    &-panel{
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.5s;
+        position: relative;
+        .btn{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 44px;
+        }
+    }
+}
+.nav{
+    display: inline-block;
+    vertical-align: middle;
+    &-list{
+        &__item{
+            display: inline-block;
+            vertical-align: middle;
+            list-style: none;
+            padding: 0 18px;
+        }
+        &__link{
+            font-size: 13px;
+            letter-spacing: 0.2px;
+            &:hover{
+                text-shadow: 2px 2px 2px #000;
+            }
+        }
+    }
+}
+.logo{
+    font-size: 33px;
+    letter-spacing: 0.7px;
+    padding-bottom: 6px;
+    font-family: 'Ropa Sans';
+}
+.log-in:hover,
+.sing-up:hover{
+    text-shadow: 0px 0px 1px;
+}
+
+.menu-button {
+    display: none;
+    cursor: pointer;
+    height: 25px;
+    padding: 10px 10px 5px 0;
+    width: 22px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    span {
+        background: #fff;
+        display: block;
+        height: 2px;
+        width: 22px;
+        &:after, 
+        &:before {
+            content: '';
+            background: #fff;
+            display: block;
+            height: 2px;
+            position: relative;
+            width: 100%;
+        }
+        &:before {
+            top: -5px;
+        }
+        &:after {
+            top: 3px;
+        }
+    }
+    &.open {
+        z-index: 10000;
+        span{
+            background: transparent;
+            width: 22px;
+        }
+        span:after, 
+        span:before {
+            background: $brand-color-2;
+            height: 2px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: 0;
+        }
+        span:before {
+            top: -3px;
+        }
+        span:after {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            top: -6px;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .nav-list__item{
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 950px) { 
+    .menu-button {
+        display: block;
+    }
+    .nav{
+        display: none;
+    }
+    .header-panel {
+        padding: 30px 0 30px 48px;
+    }
+}
+
+@media screen and (max-width: 700px) { 
+    header{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .header-panel {
+        padding: 13px 0 14px 48px;
+        border: none;
+    }
+    .logo {
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 480px) { 
+    .header-panel .btn{
+        display: none;
+    }
+}
+
