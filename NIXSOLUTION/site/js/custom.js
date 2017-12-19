@@ -21,11 +21,6 @@ $(window).load(function () {
     }
 
     $('body').removeClass('loaded');
-    if ($('.js-styled').length) {
-      $('.js-styled').styler();
-    }
-
-
     
     if ($('.js-slider').length) {
       $('.js-slider').slick({
@@ -71,16 +66,9 @@ $(window).load(function () {
     };
 
     $(".js-arrow-down").on("click", function (event) {
-      //отменяем стандартную обработку нажатия по ссылке
       event.preventDefault();
-
-      //забираем идентификатор бока с атрибута href
       var id  = $(this).attr('href'),
-
-      //узнаем высоту от начала страницы до блока на который ссылается якорь
-        top = $(id).offset().top;
-      
-      //анимируем переход на расстояние - top за 1500 мс
+      top = $(id).offset().top;
       $('body,html').animate({scrollTop: top}, 1500);
     });
 
@@ -91,10 +79,10 @@ $(window).load(function () {
       $('body').removeClass('pushy-open-left');
     })
 
-
 });
 
 $(window).scroll(function (event) {
+
   if ($(window).scrollTop() > 0) {
 
     if (!$('header').hasClass('active')) {
@@ -106,9 +94,11 @@ $(window).scroll(function (event) {
       $('header').removeClass('active');
     }
   }
+
 });
 
 var handler = function() {
+  
   var viewport_wid = viewport().width;
   
   if(viewport_wid <= 550) {

@@ -136,18 +136,12 @@ input[type="search"]::-webkit-search-results-decoration {
   font-style: normal; }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Bold.eot");
-  src: local("☺"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype"), url("../fonts/Roboto-Bold.svg") format("svg");
-  font-weight: 700;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Panton';
-  src: url("../fonts/Panton-Black.eot");
-  src: local("☺"), url("../fonts/Panton-Black.woff") format("woff"), url("../fonts/Panton-Black.ttf") format("truetype"), url("../fonts/Panton-Black.svg") format("svg");
-  font-weight: 900;
-  font-style: normal; }
+  font-family: 'Ropa Sans';
+  src: url("../fonts/Ropa Sans Regular.eot");
+  src: url("../fonts/Ropa Sans Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Ropa Sans Regular.woff") format("woff"), url("../fonts/Ropa Sans Regular.ttf") format("truetype"), url("../fonts/Ropa Sans Regular.svg#Ropa Sans Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
 
 @font-face {
   font-family: 'icomoon';
@@ -204,14 +198,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .icon-service:before {
   content: "\e907";
   color: #569305; }
-
-@font-face {
-  font-family: 'Ropa Sans';
-  src: url("../fonts/Ropa Sans Regular.eot");
-  src: url("../fonts/Ropa Sans Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Ropa Sans Regular.woff") format("woff"), url("../fonts/Ropa Sans Regular.ttf") format("truetype"), url("../fonts/Ropa Sans Regular.svg#Ropa Sans Regular") format("svg");
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal; }
 
 /* Slider */
 .slick-slider {
@@ -742,6 +728,24 @@ img {
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain; }
+
+/* loader */
+.loaded .main-wrapper {
+  visibility: hidden; }
+
+.icon-load {
+  background: url(../img/loader.gif) no-repeat left top;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-left: -20px;
+  display: none; }
+
+.loaded .icon-load {
+  display: block; }
 
 /*
 ================================================================================
@@ -1283,6 +1287,14 @@ body.ios.pushy-open-left {
   .planning-list__desc {
     margin-bottom: 12px;
     font-size: 15px; } }
+
+@media screen and (max-width: 767px) {
+  .section-intro__video {
+    background: url(../img/intro-bg.jpg) center center; }
+    .section-intro__video video {
+      display: none; }
+    .section-intro__video:after {
+      background: rgba(27, 16, 0, 0.5); } }
 
 @media screen and (max-width: 700px) {
   .wrapper {
